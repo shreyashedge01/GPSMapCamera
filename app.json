@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "GeoStampCamera",
+    "slug": "geostampcamera",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.geostampcamera.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to take photos with location stamps and scan QR codes.",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to add location stamps to photos.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app uses your location to add location stamps to photos.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photo library to save photos."
+      },
+      "config": {
+        "googleMapsApiKey": "$(GOOGLE_MAPS_API_KEY)"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "package": "com.geostampcamera.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "$(GOOGLE_MAPS_API_KEY)"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
+      ],
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to scan QR codes."
+        }
+      ],
+      "expo-media-library",
+      "expo-file-system"
+    ],
+    "extra": {
+      "googleMapsApiKey": "$(GOOGLE_MAPS_API_KEY)",
+      "openWeatherApiKey": "$(OPENWEATHER_API_KEY)",
+      "eas": {
+        "projectId": "$(EXPO_PROJECT_ID)"
+      }
+    }
+  }
+}
